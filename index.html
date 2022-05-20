@@ -22,12 +22,20 @@
             <p>{{message}}</p>
 
             <!-- Search -->
-            <form class="search">
-                <input type="text" class="search__input" required placeholder="Search GitHub users">
-                <input type="submit" class="search__submit" value="Search">
+            <form class="search" v-on:submit.prevent = "buscar">
+                <input type="text" v-model="busqueda" class="search__input"  placeholder="Search GitHub users">
+                <input type="submit" class="search__submit" value="buscar">
             </form>
 
             <!-- Result -->
+            <div class="result" v-if="result">
+                <h2 class="result__name">Sintaxis</h2>
+                <img src="Foto.jpg" alt="" class="result__avatar">
+                <p class="result__bio">si me escribes mal te jodo la vida </p>
+                <br>
+                <a href="www.sena.edu.co">Link</a>
+
+            </div>
             <!-- Error -->
             <div class="result__error"></div>
         </article>
